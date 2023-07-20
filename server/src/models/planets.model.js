@@ -9,7 +9,7 @@ function isPlanetHabitable(planet) {
         && planet['koi_prad'] < 1.6;
 }
 
-fs.createReadStream('./data/kepler_data.csv')
+fs.createReadStream('../../data/kepler_data.csv')
     .pipe(parse({
         comment: '#',
         columns: true
@@ -27,6 +27,6 @@ fs.createReadStream('./data/kepler_data.csv')
         console.log('Done');
     });
 
-    module.exports = {
-        planets: habitablePlanets,
-    };
+module.exports = {
+    planets: habitablePlanets,
+};
