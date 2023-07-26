@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/tinkereryorch/nasa-mission/issues"
   },
-  "homepage": "https://github.com/tinkereryorch/nasa-mission#readme"
+  "homepage": "https://github.com/tinkereryorch/nasa-mission#readme",
+  "dependencies": {
+    "morgan": "^1.10.0"
+  }
 }
