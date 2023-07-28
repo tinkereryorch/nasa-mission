@@ -3,7 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const morgan = require('morgan');
 
-const planetsRouter = require('./routes/planets.router');
+const planetsRouter = require('./routes/planets/planets.router');
 
 const app = express();
 
