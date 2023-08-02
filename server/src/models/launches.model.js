@@ -20,9 +20,17 @@ function getAllLaunches() {
 }
 
 function addNewLaunch() {
-    launches.set(launch.flightNumber, launch);
+    latestFlightNumber++;
+    launches.set(latestFlightNumber,
+        Object.assign(launch, {
+            flightNumber: latestFlightNumber,
+            upcoming: true,
+            success: true,
+            customers: ['NASA', 'NOAA']
+        }));
 }
 
-module.exports =  {
+module.exports = {
+    addNewLaunch,
     getAllLaunches,
 };
