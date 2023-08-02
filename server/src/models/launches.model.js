@@ -19,6 +19,10 @@ function getAllLaunches() {
     return Array.from(launches.values());
 }
 
+function addNewLaunch() {
+    launches.set(launch.flightNumber, launch);
+}
+
 module.exports =  {
     getAllLaunches,
 };
