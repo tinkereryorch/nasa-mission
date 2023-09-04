@@ -21,7 +21,7 @@ async function saveLaunch(launch) {
     await launchesDatabase.updateOne({
         flightNumber: launch.flightNumber,
     }, launch, {
-        upsert: true
+        upsert: true,
     });
 }
 
@@ -29,8 +29,11 @@ function existsLaunchWithId(launchId) {
     return launches.has(launchId);
 }
 
-function getAllLaunches() {
-    return Array.from(launches.values());
+async function getAllLaunches() {
+    return await launchesDatabase.find({}, {
+        '__id': 0,
+        '__v': 0
+    });
 }
 
 function addNewLaunch(launch) {
@@ -56,5 +59,7 @@ module.exports = {
     existsLaunchWithId,
     addNewLaunch,
     getAllLaunches,
-    abortLaunchById
+    abortLaunchById,
+    saveLaunch,
+    launch
 };
