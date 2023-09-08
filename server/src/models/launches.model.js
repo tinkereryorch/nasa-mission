@@ -61,14 +61,14 @@ async function getAllLaunches() {
 async function scheduleNewLaunch(launch) {
     const newFlightNumber = await getLatestFlightNumber() + 1;
 
-    Object.assign(launch, {
+    const newLaunch = Object.assign(launch, {
         flightNumber: newFlightNumber,
         upcoming: true,
         success: true,
         customers: ['NASA', 'NOAA']
     });
 
-    await saveLaunch(launch);
+    await saveLaunch(newLaunch);
 }
 
 
