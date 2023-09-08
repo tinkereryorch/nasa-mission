@@ -64,10 +64,11 @@ async function scheduleNewLaunch(launch) {
     Object.assign(launch, {
         flightNumber: newFlightNumber,
         upcoming: true,
-        success: true
+        success: true,
+        customers: ['NASA', 'NOAA']
     });
 
-    await saveLaunch(newLaunch);
+    await saveLaunch(launch);
 }
 
 
