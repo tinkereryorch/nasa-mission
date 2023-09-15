@@ -1,5 +1,6 @@
 const http = require('http');
 const { loadPlanetsData } = require('./models/planets.model');
+const { loadLaunchData } = require('./models/launches.model');
 const app = require('./app');
 const { mongoConnect } = require('./services/mongo');
 
