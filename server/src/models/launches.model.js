@@ -16,6 +16,10 @@ const launch = {
 
 saveLaunch(launch);
 
+async function loadLaunchesData() {
+    console.log('Downloading launches data...');
+}
+
 async function saveLaunch(launch) {
     const planet = await planets.findOne({
         keplerName: launch.target,
@@ -84,6 +88,7 @@ async function abortLaunchById(launchId) {
 }
 
 module.exports = {
+    loadLaunchesData,
     existsLaunchWithId,
     scheduleNewLaunch,
     getAllLaunches,
